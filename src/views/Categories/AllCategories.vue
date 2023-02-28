@@ -11,11 +11,11 @@
             </v-btn></router-link
           >
 
-          <router-link style="text-decoration: none" to="/allitem"
+          <!-- <router-link style="text-decoration: none" to="/allitem"
             ><v-btn color="success" class="mr-4">
               All items
             </v-btn></router-link
-          >
+          > -->
           <router-link style="text-decoration: none" to="/"
             ><v-btn color="warning" class="mr-4 dark">
               Home
@@ -39,7 +39,7 @@
               flat
               v-model=item.status
               color="success"
-              :label="`${item.status.toString() == 'true' ? 'Active' : 'Deactive'}`"
+              :label="`${item.status.toString() == ('true' || true)? 'Active' : 'Deactive'}`"
               @change="changeStatus(item)"
             ></v-switch>
           </template>
@@ -88,10 +88,10 @@ export default {
     ...mapGetters(["allcategory"]),
 
       // Filter Category data based on category name
-    filteredItems() {
+      filteredItems() {
       return this.allcategory.filter((item) => {
         console.log(item, "item");
-        return item.categoryname.match(this.search);
+        return item.categoryname.toLowerCase().match(this.search);
       });
     },
     
@@ -102,7 +102,7 @@ export default {
     removecategory(id) {
       swal({
         title: "Are you sure?",
-        text: "Once deleted, you will not be able to recover this task details!",
+        text: "Once deleted, you will not be able to recover this Category details!",
         icon: "warning",
         buttons: true,
         dangerMode: true,
@@ -110,12 +110,12 @@ export default {
         if (willDelete) {
           this.deleteCategory(id);
 
-          swal("Poof! Your task details has been deleted!", {
+          swal("Poof! Your Category details has been deleted!", {
             icon: "success",
           });
           this.$router.go();
         } else {
-          swal("Your task details  is safe!");
+          swal("Your Category details  is safe!");
         }
       });
     },

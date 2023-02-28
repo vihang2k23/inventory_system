@@ -104,7 +104,7 @@ async mounted() {
   // Update Method
   methods: {
     async updatedata(id) {
-        console.log(id);
+     
       try {
       
         const user = await axios.put("http://localhost:3000/item/" + id, {
