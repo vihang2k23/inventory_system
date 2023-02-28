@@ -11,13 +11,13 @@
             v-model="toggle"
             divided
           >
-            <v-btn class="" @click="() => !toogle">Allitems</v-btn>
-            <v-btn @click="() => toggle"> AllCategories</v-btn>
+            <v-btn class="" @click="() => toogle = 0">Allitems</v-btn>
+            <v-btn @click="() => toggle = 1"> AllCategories</v-btn>
           </v-btn-toggle>
         </div>
 
         <!--If Toggle then Display All Categories Table   -->
-        <div v-if="toggle">
+        <div v-if="toggle === 1">
 
           <!-- Searchbar for Searching Category based on Categories name  -->
           <v-card-title>
@@ -42,7 +42,7 @@
                 flat
                 v-model="item.status"
                 color="success"
-                :label="`${item.status === 'true' ? 'Active' : 'InActive'}`"
+                :label="`${item.status.toString() === ('true' || true) ? 'Active' : 'DeActive'}`"
               ></v-switch>
             </template>
           </v-data-table>
@@ -97,7 +97,7 @@ export default {
   name: "Home-view",
   data() {
     return {
-      toggle: "",
+      toggle: 0,
       search: "",
 
       dialog: false,

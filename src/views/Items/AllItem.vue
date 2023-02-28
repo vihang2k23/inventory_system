@@ -8,11 +8,11 @@
             ><v-btn color="primary" class="mx-4"> Add Item </v-btn></router-link
           >
 
-          <router-link style="text-decoration: none" to="/allcategories"
+          <!-- <router-link style="text-decoration: none" to="/allcategories"
             ><v-btn color="success" class="mr-4">
               All Categories
             </v-btn></router-link
-          >
+          > -->
           <router-link style="text-decoration: none" to="/"
             ><v-btn color="warning" class="mr-4 dark">
               Home
@@ -94,7 +94,7 @@ export default {
     filteredItems() {
       return this.allitem.filter((item) => {
         console.log(item);
-        return item.itemname.match(this.search);
+        return item.itemname.toLowerCase().match(this.search);
       });
     },
   },
@@ -111,12 +111,12 @@ export default {
       }).then((willDelete) => {
         if (willDelete) {
           this.deletItem(id);
-          swal("Poof! Your task details has been deleted!", {
+          swal("Poof! Your Item details has been deleted!", {
             icon: "success",
           });
           this.$router.go();
         } else {
-          swal("Your task details  is safe!");
+          swal("Your Item details  is safe!");
         }
       });
     },

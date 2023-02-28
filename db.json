@@ -1,12 +1,52 @@
 {
   "item": [
     {
-      "itemname": "watch",
-      "itemcategory": "wrist",
-      "itemdes": "data",
-      "status": "false",
+      "itemname": "Watch",
+      "itemcategory": "watch",
+      "itemdes": "best watch ",
+      "status": "true",
       "itemprice": "1000",
       "id": 1
+    },
+    {
+      "itemname": "Mobile",
+      "itemcategory": "smart",
+      "itemdes": "5g",
+      "status": "true",
+      "itemprice": "10000",
+      "id": 2
+    },
+    {
+      "itemname": "Laptop",
+      "itemcategory": "smart",
+      "itemdes": "i5",
+      "status": "true",
+      "itemprice": "1000000",
+      "id": 3
+    },
+    {
+      "itemname": "tablet",
+      "itemcategory": "tablet",
+      "itemdes": "tablet",
+      "status": "true",
+      "itemprice": "12000",
+      "id": 4
+    },
+    {
+      "itemname": "Mixer",
+      "itemcategory": "Home",
+      "itemdes": "Branded Mixer",
+      "status": "true",
+      "itemprice": "10.19",
+      "id": 5
+    },
+    {
+      "itemname": "Computer",
+      "itemcategory": "Computer",
+      "itemdes": "Computer",
+      "status": "true",
+      "itemprice": "100000",
+      "id": 6
     }
   ],
   "category": [
@@ -15,6 +55,30 @@
       "categorydes": "Wrist watch1",
       "status": "false",
       "id": 1
+    },
+    {
+      "categoryname": "mobile",
+      "categorydes": "Smart phone",
+      "status": "false",
+      "id": 2
+    },
+    {
+      "categoryname": "tablet",
+      "categorydes": "tablet",
+      "status": "true",
+      "id": 3
+    },
+    {
+      "categoryname": "Computer",
+      "categorydes": "Computer",
+      "status": "true",
+      "id": 4
+    },
+    {
+      "categoryname": "Computer",
+      "categorydes": "Mobile",
+      "status": "false",
+      "id": 5
     }
   ]
 }
