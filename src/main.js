@@ -5,6 +5,14 @@ import router from './route'
 import store from './store'
 import swal from "vue-swal"
 Vue.config.productionTip = false
+
+Vue.filter('currency', function (value) {
+  
+  return " ₹ "  + parseFloat(value).toFixed(2);
+})
+Vue.filter("convert",function (value) {
+  return value.toString();
+})
 Vue.use(swal)
 new Vue({
   vuetify,
