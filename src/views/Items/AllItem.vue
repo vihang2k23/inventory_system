@@ -41,7 +41,7 @@
                 flat
                 v-model=item.status 
                 color="success"
-                :label="`${item.status.toString() == 'true' ? 'Active' : 'Deactive'}`"
+                :label="`${item.status.toString() == ('true' || true) ? 'Active' : 'Deactive'}`"
                 @change="changeStatus(item)"
               ></v-switch>
             </template>
@@ -101,7 +101,7 @@ export default {
   methods: {
     ...mapActions(["getItem", "deletItem"]),
     // Remove Item function
-    removeitem(id) {
+    removeid(id) {
       swal({
         title: "Are you sure?",
         text: "Once deleted, you will not be able to recover this task details!",

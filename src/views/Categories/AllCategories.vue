@@ -39,7 +39,7 @@
               flat
               v-model=item.status
               color="success"
-              :label="`${item.status.toString() == 'true' ? 'Active' : 'Deactive'}`"
+              :label="`${item.status.toString() == ('true' || true)? 'Active' : 'Deactive'}`"
               @change="changeStatus(item)"
             ></v-switch>
           </template>

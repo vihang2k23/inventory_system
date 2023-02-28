@@ -1,26 +1,20 @@
 {
   "item": [
     {
-      "itemname": "Watch",
-      "itemcategory": "Men",
-      "itemdes": "Wrist Watch",
-      "status": "true",
-      "itemprice": "100111",
-      "id": 3
+      "itemname": "watch",
+      "itemcategory": "wrist",
+      "itemdes": "data",
+      "status": "false",
+      "itemprice": "1000",
+      "id": 1
     }
   ],
   "category": [
     {
-      "categoryname": "ssss",
-      "categorydes": "sss",
-      "status": "true",
+      "categoryname": "watch",
+      "categorydes": "Wrist watch1",
+      "status": "false",
       "id": 1
-    },
-    {
-      "categoryname": "sss",
-      "categorydes": "sss",
-      "status": "true",
-      "id": 2
     }
   ]
 }
