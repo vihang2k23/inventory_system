@@ -8,7 +8,7 @@
       <!-- <v-app-bar-nav-icon></v-app-bar-nav-icon> -->
  <v-app-bar-nav-icon  @click.stop="drawer = !drawer"></v-app-bar-nav-icon>
 
-      <v-toolbar-title>Page title</v-toolbar-title>
+      <v-toolbar-title>Inventory-System</v-toolbar-title>
 
       <v-spacer></v-spacer>
 

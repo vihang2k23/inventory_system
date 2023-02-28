@@ -47,7 +47,11 @@
             >
               EditItem
             </v-btn>
-  
+            <router-link style="text-decoration: none" to="/allitem"
+            ><v-btn color="primary" class="mr-4">
+              All Items
+            </v-btn></router-link
+          >
           </v-form></v-col
         >
 

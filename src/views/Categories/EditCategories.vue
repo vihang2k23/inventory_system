@@ -34,6 +34,11 @@
           <v-btn :disabled="!valid" color="success" class="mr-4" type="submit">
             EditCategory
           </v-btn>
+          <router-link style="text-decoration: none" to="/allcategories"
+            ><v-btn color="primary" class="mr-4">
+              All Categories
+            </v-btn></router-link
+          >
         </v-form></v-col
       >
     </v-row>
