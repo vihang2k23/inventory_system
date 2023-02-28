@@ -14,10 +14,13 @@
             </v-btn></router-link
           >
           <router-link style="text-decoration: none" to="/"
-            ><v-btn  color="warning" class="mr-4 dark"> Home </v-btn></router-link
+            ><v-btn color="warning" class="mr-4 dark">
+              Home
+            </v-btn></router-link
           ></v-main
         >
         <v-card-title>
+            <!-- Searchbar for Searching Category based on Categories name  -->
           <v-text-field
             v-model="search"
             append-icon="mdi-magnify"
@@ -27,21 +30,30 @@
           ></v-text-field>
         </v-card-title>
         <div>
+          
+  <!-- Data table for display all Items details -->
           <v-data-table :headers="headers" :items="filteredItems">
+            <template v-slot:[`item.itemprice`]="{ item }">
+              {{ item.itemprice | currency }}
+            </template>
             <template v-slot:[`item.status`]="{ item }">
               <v-switch
                 flat
-                v-model="item.status"
+                v-model=item.status 
                 color="success"
-                :label="`${item.status =='true' ? 'Active' : 'Deactive'}`"
+                :label="`${item.status.toString() == 'true' ? 'Active' : 'Deactive'}`"
                 @change="changeStatus(item)"
               ></v-switch>
             </template>
             <template v-slot:[`item.actions`]="{ item }">
-              <router-link style="text-decoration: none;" :to="`/edititem/${item.id}`"
+             <!-- Edit button -->
+              <router-link
+                style="text-decoration: none"
+                :to="`/edititem/${item.id}`"
                 ><v-icon small class="mr-2"> mdi-pencil </v-icon></router-link
               >
-              <v-icon small @click="removetask(item.id)"> mdi-delete </v-icon>
+              <!-- Delete button -->
+              <v-icon small @click="removeid(item.id)"> mdi-delete </v-icon>
             </template>
           </v-data-table>
         </div>
@@ -78,6 +90,7 @@ export default {
   },
   computed: {
     ...mapGetters(["allitem"]),
+     // Filter Item data based on Item name
     filteredItems() {
       return this.allitem.filter((item) => {
         console.log(item);
@@ -87,8 +100,8 @@ export default {
   },
   methods: {
     ...mapActions(["getItem", "deletItem"]),
-
-    removetask(id) {
+    // Remove Item function
+    removeitem(id) {
       swal({
         title: "Are you sure?",
         text: "Once deleted, you will not be able to recover this task details!",
@@ -101,10 +114,9 @@ export default {
           swal("Poof! Your task details has been deleted!", {
             icon: "success",
           });
-          this.$router.go()
+          this.$router.go();
         } else {
           swal("Your task details  is safe!");
-       
         }
       });
     },
@@ -125,5 +137,7 @@ export default {
   created() {
     this.getItem();
   },
+  
+  
 };
 </script>

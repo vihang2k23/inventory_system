@@ -3,6 +3,7 @@
       <v-row>
         <v-col cols="2"></v-col>
         <v-col cols="8">
+          <!-- Form for edit item -->
           <v-form ref="form" @submit.prevent="updatedata(item.id)" v-model="valid" lazy-validation>
             <v-text-field
               v-model.lazy="item.itemname"
@@ -35,7 +36,7 @@
             ></v-text-field>
             <v-radio-group v-model.lazy="item.status" row >
               <v-radio label="Active" value="true"></v-radio>
-              <v-radio label="InActive" value="false"></v-radio>
+              <v-radio label="DeActive" value="false"></v-radio>
             </v-radio-group>
   
             <v-btn
@@ -46,7 +47,11 @@
             >
               EditItem
             </v-btn>
-  
+            <router-link style="text-decoration: none" to="/allitem"
+            ><v-btn color="primary" class="mr-4">
+              All Items
+            </v-btn></router-link
+          >
           </v-form></v-col
         >
 
